@@ -70,5 +70,36 @@ p{
 
 	<script type="text/javascript" src="particles.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<script>
+window.onload = function(){
+
+var links = document.getElementsByTagName('a');
+for( var i=0,il = links.length; i< il; i ++ ){
+ links[i].onclick = clickHandler;
+}
+
+function clickHandler(event) {
+var box = document.createElement('div');
+box.style.position = 'fixed';
+box.style.top = '0px';
+box.style.left = '0px';
+box.style.width = '100vw';
+box.style.height = '100vh';
+
+box.style.background = 'white';
+
+box.innerText = 'Loading...';
+document.body.appendChild(box);
+event.preventDefault();
+
+setTimeout(function() {
+
+  location.href = this.href;
+}, 3000);
+
+
+};
+};
+</script>
 </body>
 </html>
