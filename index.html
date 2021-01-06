@@ -27,11 +27,12 @@ p{
 	text-shadow: 0 0 10px #FFFF;
 
 }
-
+<script src="jquery-3.5.1.min.js"></script>
 
  </style>
+	
 </head>
-<body>
+<body class="container">
 	<div id="particles-js" style="width: 100%; position: fixed;">
 	</div>
 
@@ -63,43 +64,19 @@ p{
 		        </a>
 		    </div>
 		</div>
-
-		
-	
+	<script>
+      $(document).ready(function() {
+    // Let's simulate some loading time.
+    
+    setTimeout(function() {
+        $('.container').addClass('container-loaded');
+    }, 1500);
+});
+    </script>
 
 
 	<script type="text/javascript" src="particles.js"></script>
 	<script type="text/javascript" src="app.js"></script>
-	<script>
-window.onload = function(){
 
-var links = document.getElementsByTagName('a');
-for( var i=0,il = links.length; i< il; i ++ ){
- links[i].onclick = clickHandler;
-}
-
-function clickHandler(event) {
-var box = document.createElement('div');
-box.style.position = 'fixed';
-box.style.top = '0px';
-box.style.left = '0px';
-box.style.width = '100vw';
-box.style.height = '100vh';
-
-box.style.background = 'white';
-
-box.innerText = 'Loading...';
-document.body.appendChild(box);
-event.preventDefault();
-
-setTimeout(function() {
-
-  location.href = this.href;
-}, 3000);
-
-
-};
-};
-</script>
 </body>
 </html>
